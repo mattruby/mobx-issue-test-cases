@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+<script src="js/jquery.2.2.1.js"></script>
+<script src="js/mobx.2.6.4.js"></script>
+<script src="js/mobx-utils.1.1.2.js"></script>
+
+<script>
+
+	// this EXPLODES!
+	// Uncaught TypeError: jqXHR.always is not a function(…)
+	var promise2 = $.post('/echo/jso/');
+
+	var obsPromise2 = mobxUtils.fromPromise(promise2);
+
+	mobx.autorun(function () {
+		$('#mobxPromiseStatus2').append(' ' + obsPromise2.state);
+	});
+	console.log('looks like this ref has changed: ', promise2);
+</script>
+
+</body>
+</html>

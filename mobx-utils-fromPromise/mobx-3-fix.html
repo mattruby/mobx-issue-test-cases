@@ -7,7 +7,8 @@
 <body>
 
 <script src="js/jquery.2.2.1.js"></script>
-<script src="js/mobx.2.6.4.js"></script>
+<!--<script src="js/mobx.2.6.4.js"></script>-->
+<script src="https://unpkg.com/mobx@3.0.0/lib/mobx.umd.js"></script>
 <script src="js/mobx-utils.1.1.2.js"></script>
 
 <script>
@@ -21,7 +22,7 @@
 	mobx.autorun(function () {
 		console.log(obsPromise2.state);
 	});
-	console.log('looks it\'s changed!: ', promise2);
+	console.log('looks like we\'re good!: ', promise2);
 </script>
 
 </body>
